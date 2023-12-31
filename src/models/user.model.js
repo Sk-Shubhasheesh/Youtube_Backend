@@ -18,7 +18,7 @@ const userSchema = new Schema({
         lowercase: true,
         trim:true,
     },
-    fullname:{
+    fullName:{
         type:String,
         required: true,
         trim:true,
@@ -28,13 +28,13 @@ const userSchema = new Schema({
         type:String, // cloudinary url
         required: true,
     },
-    cover:{
+    coverImage:{
         type: String,   
     },
-    watchHistory:{
+    watchHistory:[{
         type: Schema.Types.ObjectId,
         ref: "Video"
-    },
+    }],
     password: {
         type: String,
         required:[true, 'Password is required']
